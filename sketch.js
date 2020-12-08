@@ -8,7 +8,7 @@ var box1, box2, box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13,box14
 var hero,monster,rope,ground;
 
 function preload() {
-  bg = loadImage("GamingBackground.jpg");
+  bg = loadImage("GamingBackground.png");
 }
 
 function setup() {
@@ -17,6 +17,10 @@ function setup() {
   world = engine.world;
 
   ground = new Ground(600, 600, 1200, 20);
+
+  hero = new Hero(400,800,250);
+  rope = new Rope(hero.body, { x: 500, y: 50 });
+  monster = new Monster(1100,550,300);
 
   box1 = new Box(600, 100, 70, 70);
   box2 = new Box(900, 100, 70, 70);
@@ -44,10 +48,6 @@ function setup() {
   box24 = new Box(600, 100, 70, 70);
   box25 = new Box(600, 100, 70, 70);
   box26 = new Box(600, 100, 70, 70);
-
-  hero = new Hero(400,800,200);
-  rope = new Rope(hero.body, { x: 500, y: 50 });
-  monster = new Monster(1100,550,200);
 
 }
 
